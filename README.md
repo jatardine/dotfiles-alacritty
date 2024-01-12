@@ -6,8 +6,9 @@ This is a default theme I use across all of my machines, including my Acer Aspir
 
 ### Dependencies
 
-- alacritty (duh)
-- isokeva-custom (any [Isokeva font](https://github.com/be5invis/Iosevka) works but `fonts.toml` needs to be edited)
+- Alacritty (duh)
+- Isokeva-Custom (any [Isokeva font](https://github.com/be5invis/Iosevka) works but `fonts.toml` needs to be edited)
+- zsh & [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) (for the arrows insead of `[USER]@[HOST]`)
 
 ## Potentially FAQ
 
@@ -19,3 +20,28 @@ A: My Xfce Terminal uses the same color scheme but always relies on bright color
 
 It's a customized Fluxbox. You can find the configuration [here](https://github.com/jatardine/dotfiles-fluxbox-acer).
 
+**Q: Where are the arrows?**
+
+This is not set by any terminal emulator but by the shell (in this case zsh) itself. Oh My Zsh, the most popular framework for zsh, handles this and there are [tons of themes you can choose from](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes). Unfortunately, my config calls a custom theme called `Archcraft`, which came pre-installed with (you guessed it) [Archcraft](https://github.com/archcraft-os).
+
+The theme can be copied and saved to `~/.oh-my-zsh/custom/themes/archcraft.zsh-theme`:
+
+```
+# Default OMZ theme for Archcraft
+
+if [[ "$USER" == "root" ]]; then
+  PROMPT="%(?:%{$fg_bold[red]%}%{$fg_bold[yellow]%}%{$fg_bold[red]%} :%{$fg_bold[red]%} )"
+  PROMPT+='%{$fg[cyan]%}  %c%{$reset_color%} $(git_prompt_info)'
+else
+  PROMPT="%(?:%{$fg_bold[red]%}%{$fg_bold[green]%}%{$fg_bold[yellow]%} :%{$fg_bold[red]%} )"
+  PROMPT+='%{$fg[cyan]%}  %c%{$reset_color%} $(git_prompt_info)'
+fi
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}  git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+```
+
+Then go to your `~/.zshrc` and set `ZSH_THEME` (line 11) to `"archcraft"`. Of course, the name of the theme is up to you and you're free to replace "Archcraft" with a different name and further customize it to your liking.
