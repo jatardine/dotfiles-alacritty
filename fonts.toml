@@ -1,0 +1,14 @@
+[font]
+size = 9
+
+[font.bold]
+family = "Iosevka Custom"
+
+[font.bold_italic]
+family = "Iosevka Custom"
+
+[font.italic]
+family = "Iosevka Custom"
+
+[font.normal]
+family = "Iosevka Custom"
