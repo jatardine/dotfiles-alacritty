@@ -7,7 +7,7 @@ This is a default theme I use across all of my machines, including my Acer Aspir
 ### Dependencies
 
 - Alacritty (duh)
-- Isokeva Custom & Noto Sans (any [Isokeva font](https://github.com/be5invis/Iosevka) works but `fonts.toml` needs to be edited)
+- Isokeva Custom Regular & Noto Sans Regular (any [Isokeva font](https://github.com/be5invis/Iosevka) works but `fonts.toml` needs to be edited)
 - zsh & [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) (for the arrows insead of `[USER]@[HOST]`)
 
 ## Potentially FAQ
