@@ -44,4 +44,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 ```
 
-Then go to your `~/.zshrc` and set `ZSH_THEME` (line 11) to `"archcraft"`. Of course, the name of the theme is up to you and you're free to replace "Archcraft" with a different name and further customize it to your liking.
+Then go to your `~/.zshrc` and set `ZSH_THEME` (line 11) to `"archcraft"`. Of course, the name of the theme is up to you and you're free to replace "Archcraft" with a different name and further customize it to your liking. You may want to also edit `oh.my-zsh.sh` to allow initialization of custom themes.
+
+If you don't see arrows and instead just the usual unicode blocks, you're missing the appropriate font listed in **Dependencies** above.
