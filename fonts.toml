@@ -2,13 +2,13 @@
 size = 9
 
 [font.bold]
-family = "Iosevka Custom"
+family = "Noto Sans Bold"
 
 [font.bold_italic]
-family = "Iosevka Custom"
+family = "Noto Sans Bold Italic"
 
 [font.italic]
-family = "Iosevka Custom"
+family = "Noto Sans Italic"
 
 [font.normal]
-family = "Iosevka Custom"
+family = "Noto Sans Regular"
