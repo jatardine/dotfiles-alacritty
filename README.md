@@ -7,18 +7,26 @@ This is a default theme I use across all of my machines, including my Acer Aspir
 ### Dependencies
 
 - Alacritty (duh)
-- Noto Sans Regular, Noto Sans Bold, Noto Sans Bold Italic, Noto Sans Italic from the [Noto Sans font family](https://fonts.google.com/noto/specimen/Noto+Sans)
+- Iosevka Custom (**Please check the FAQ because there's a catch!**)
 - zsh & [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) (for the arrows insead of `[USER]@[HOST]`)
 
 ## Potentially FAQ
 
-**Q: Why does the demo screenshot show Xfce Terminal alongside Alacritty?**
+**Q: Why does my font not match the one in the demo?**
 
-A: My Xfce Terminal uses the same color scheme but always relies on bright colors (`colors.bright` in Alacritty). It's just a demo of what bright colors look like in practice. (Also my Vim still is calling Xfce Terminal and I can't be bothered to change that.
+Those may look like the regular Iosevka fonts, however Adi (Archcraft) edited them directly, instead of creating a separate TTF file:
 
-**Q: What's that toolbar / what WM are you using in the demo?**
+```
+fc-list | grep "Iosevka Custom"
+/usr/share/fonts/iosevka/iosevka-regular.ttf: Iosevka Custom:style=Regular
+/usr/share/fonts/iosevka/iosevka-oblique.ttf: Iosevka Custom,Iosevka Custom Oblique:style=Oblique,Regular
+/usr/share/fonts/iosevka/iosevka-bold.ttf: Iosevka Custom:style=Bold
+/usr/share/fonts/iosevka/iosevka-bolditalic.ttf: Iosevka Custom:style=Bold Italic
+/usr/share/fonts/iosevka/iosevka-italic.ttf: Iosevka Custom:style=Italic
+/usr/share/fonts/iosevka/iosevka-boldoblique.ttf: Iosevka Custom,Iosevka Custom Bold Oblique:style=Bold Oblique,Regular
+```
 
-It's a customized Fluxbox. You can find the configuration [here](https://github.com/jatardine/dotfiles-fluxbox-acer).
+I can't tell why he did that and I apologize for this odd configuration that will likely override existing Iosevka defaults. If you don't mind it, feel free to replace your defaults; if this messes the rest of your desktop up, you may want to choose a different font and edit `fonts.toml`. (Trust me, it frustrates me just as much and porting this config to a different machine only partially worked in one case.)
 
 **Q: Where are the arrows?**
 
@@ -46,4 +54,12 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 Then go to your `~/.zshrc` and set `ZSH_THEME` (line 11) to `"archcraft"`. Of course, the name of the theme is up to you and you're free to replace "Archcraft" with a different name and further customize it to your liking. You may want to also edit `oh.my-zsh.sh` to allow initialization of custom themes.
 
-If you don't see arrows and instead just the usual unicode blocks, you're missing the Noto Sans font family. (While TTY, my browser and Leafpad don't render those symbols, they work fine in Vim, Geany and both terminal emulators.)
+If you don't see arrows and instead just the usual unicode blocks, you're missing fonts able to render this Unicode character. If overriding your default Iosevka fonts with the customized set provided by this repo is not a choice for you, you may rely on the default .ttf files for the Iosevka font family or switch to Noto Sans. However, keep in mind that those fonts are vastly different from the customized Iosevka fonts and Noto Sans in particular may load with improper spacing for certain letters.
+
+**Q: Why does the demo screenshot show Xfce Terminal alongside Alacritty?**
+
+A: My Xfce Terminal uses the same color scheme but always relies on bright colors (`colors.bright` in Alacritty). It's just a demo of what bright colors look like in practice. (Also my Vim still is calling Xfce Terminal and I can't be bothered to change that.
+
+**Q: What's that toolbar / what WM are you using in the demo?**
+
+It's a customized Fluxbox. You can find the configuration [here](https://github.com/jatardine/dotfiles-fluxbox-acer).
