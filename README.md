@@ -1,4 +1,6 @@
-# Yet Another Alacritty Theme
+# Yet Another Alacritty Theme (OUTDATED)
+
+**[New repo on Codeberg!](https://codeberg.org/jevel/dotfiles-alacritty)**
 
 ![](https://github.com/jatardine/dotfiles-alacritty/blob/main/alacritty-xfce4-term-demo.png)
 
